@@ -1,0 +1,12 @@
+.book-now-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff; /* Set to white or remove this line to use the default background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-now-container * {
+  background-color: transparent !important; /* Force transparent background for all elements inside if needed */
+}

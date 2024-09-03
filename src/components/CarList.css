@@ -1,0 +1,60 @@
+/* CarList.css */
+
+.car-list {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.available-cars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.car-item {
+  display: flex; /* Align children side-by-side */
+  align-items: center; /* Align items vertically */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  justify-content: space-between; /* Ensure content is spread out */
+}
+
+.car-image {
+  max-width: 150px;
+  height: auto;
+  border-radius: 5px;
+  margin-right: 20px; /* Adds space between image and details */
+}
+
+.car-item-details {
+  flex-grow: 1; /* Allows details to take available space */
+}
+
+.car-item-details h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.car-item-details p {
+  margin: 5px 0;
+}
+
+.view-details {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: auto; /* Aligns the button to the far right */
+}
+
+.view-details:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,51 @@
+.booking-car-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  width: 300px; /* Set a fixed width for consistent card size */
+  margin: 20px;
+  padding: 15px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.booking-car-card:hover {
+  transform: translateY(-5px);
+}
+
+.car-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.car-info {
+  text-align: left;
+  padding: 10px 0;
+}
+
+.car-info h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.car-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.car-details p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.car-details i {
+  margin-right: 5px;
+  color: #007bff;
+}

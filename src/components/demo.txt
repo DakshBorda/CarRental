@@ -1,0 +1,139 @@
+in right there should be book now form but i want fields like name, mobile number ,driving license number ,aadhar number ,residential address , pickup date  ,return date and additional message. all fields should be madantory except addtional message . if user enters birthdate and he is not 18 years old then form should not be accepted and there is warning message should be there about driver should be 18 years old. in mobile number there should be +91 by default and and don' give any other country code give only +91 and there should be 10 digit number . and like mobile number ,in aadhar number and driving license number should have required field validator . in pick up date. date should not be selected from past days and pickup date should be selected duration of week from todays date means user cannot select pick up date 8 days or more days from today . return date should be bigger than pickup date. renting duration must be equal to 15 days or smaller than 15 days. and in book now form there should be get otp button instead of pay now . beacuse i want authenticate the mobile number before booking the car. and if user enters the correct otp and user checks the terms and conditions then button should be converted to book now.
+like in photo in below the car card and book form there should be terms and coditions.
+ remember that my car card in car listing page is  fetching the car  data from mongodb database. 
+
+Carlist.js code
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import './CarList.css'; // Assuming this is where the CSS is stored
+import SearchBar from './searchbar';
+
+const CarList = () => {
+  const [cars, setCars] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/api/admin/cars')
+      .then(response => {
+        setCars(response.data);
+      })
+      .catch(error => {
+        console.error('There was an error fetching the car data!', error);
+      });
+  }, []);
+
+  return (
+    <div className="car-list">
+      <h1>Find Your Perfect Car</h1>
+      <div>
+        <SearchBar />
+      </div>
+      <div className="available-cars">
+        {cars.map(car => (
+          <div key={car._id} className="car-item">
+            <img src={http://localhost:5000/${car.carPhoto}} alt={car.carName} className="car-image" />
+            <div className="car-item-details">
+              <h2>{car.carName}</h2>
+              <p>{car.fuelType} | {car.personCapacity} Seats | {car.carType}</p>
+              <p>{car.pickupLocation}</p>
+              <p><strong>Price:</strong> {car.price}</p>
+            </div>
+            <a href={/car/${car._id}} className="view-details">Book Now</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default CarList;
+
+
+
+app.js file
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom';
+import Home from './components/Home';
+import AboutUs from './components/AboutUs';
+import Login from './components/Login';
+import SignUp from './components/SignUp';
+import ContactForm from './components/ContactForm';
+import Carlist from './components/Carlist';
+import AdminPanel from './components/AdminPanel';
+import './App.css';
+import axios from 'axios';
+import BookNow from './components/BookNow';
+
+const ProtectedRoute = ({ isAdmin, children }) => {
+  return isAdmin ? children : <Navigate to="/login" />;
+};
+
+const App = () => {
+  const [isAdmin, setIsAdmin] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkAdminStatus = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/users/check-admin', {
+          withCredentials: true,
+        });
+        setIsAdmin(response.data.isAdmin);
+      } catch (error) {
+        console.error('Error checking admin status:', error);
+        setIsAdmin(false);
+      }
+    };
+
+    checkAdminStatus();
+  }, []);
+
+  return (
+    <Router>
+      <div className="container">
+        <header className="header">
+          <div className="logo">DriveNow</div>
+          <nav className="navbar">
+            <Link to="/">Home</Link>
+            <Link to="/aboutus">About Us</Link>
+            <Link to="/carlist">Car Listings</Link>
+            <Link to="/contact">Contact Us</Link>
+            <Link to="/login" className="login-icon">Login</Link>
+          </nav>
+        </header>
+        
+        <main className="main">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/carlist" element={<Carlist />} />
+            <Route path="/contact" element={<ContactForm />} />
+            <Route path="/login" element={<Login setIsAdmin={setIsAdmin} />} /> {/* Pass setIsAdmin */}
+            <Route path="/signup" element={<SignUp />} />
+
+            {/* Protect the admin routes */}
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute isAdmin={isAdmin}>
+                  <AdminPanel />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
+
+and for this booking functionality i need booking schema to store this information
+
+
+i need code for above discussion so give first frontend code .
+i click on book now button of carlisting page it should be redirected to BookNow page.
+i want book now component in three component : BookingCarCard,BookingForm and BookingPolicy. but you have limit of generating respone so give me only front end first and give all component with css in one file. when i like frontend then i will i will ask for backend.
+
+if i click on any car's book now button from carlisting page then in BookingCarCard page also have same carcard details and photo like in carlisting page.

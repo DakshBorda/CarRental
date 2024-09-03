@@ -1,0 +1,165 @@
+/* General Styles */
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+} 
+
+.navbar a:hover {
+  background-color: #e0e0e0;
+}
+
+.navbar .login-icon {
+  background-color: #007bff;
+  color: #fff;
+  padding:  10px;
+  border-radius: 5px;
+}
+
+.main {
+  padding: 20px;
+}
+
+/* Car List Page */
+ .car-list {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.car-list h1 {
+  text-align: center;
+  margin-bottom: 40px;
+} 
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+} 
+
+.search-bar input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  flex: 1;
+} 
+
+.search-bar button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filters button:hover {
+  background-color: #e0e0e0;
+}
+
+.available-cars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.car-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: box-shadow 0.3s;
+}
+
+.car-item:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.car-item img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.car-item-details {
+  flex: 1;
+}
+
+.car-item-details h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.car-item-details p {
+  font-size: 16px;
+  color: #666;
+}
+
+.view-details {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.view-details:hover {
+  background-color: #0056b3;
+} 

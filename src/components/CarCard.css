@@ -1,0 +1,58 @@
+/* src/components/CarCard.css */
+.car-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .car-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .car-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .car-details {
+    padding: 15px;
+  }
+  
+  .car-rating {
+    color: #ffcc00;
+    margin: 10px 0;
+  }
+  
+  .car-location {
+    margin: 10px 0;
+  }
+  
+  .car-features {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+  }
+  
+  .car-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .book-now {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .book-now:hover {
+    background-color: #0056b3;
+  }
+  

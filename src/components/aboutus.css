@@ -1,0 +1,132 @@
+/* aboutus.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  
+  .nav {
+    background-color: #333;
+    overflow: hidden;
+    padding: 1rem;
+  }
+  
+  .nav .custom_menu-btn button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 1.5rem;
+  }
+  
+  .nav .custom_menu-btn button span {
+    background-color: white;
+    height: 2px;
+    width: 25px;
+  }
+  
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .overlay-content a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlay-content a:hover, .overlay-content a:focus {
+    color: #f1f1f1;
+  }
+  
+  .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  .support-sec, .achie-sec {
+    padding: 3rem 2rem;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .support-sec .txt, .achie-sec .txt {
+    margin-bottom: 2rem;
+  }
+  
+  .support-sec .txt1, .achie-sec .txt1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .support-sec .txt span, .achie-sec .txt span {
+    color: #0056b3;
+  }
+  
+  .support-sec .main-sec, .achie-sec .main-sec {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .support-sec .box, .achie-sec .box {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    padding: 1rem;
+    width: calc(33% - 2rem);
+    text-align: left;
+  }
+  
+  .support-sec .box i, .achie-sec .box p:first-child {
+    color: #0056b3;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .support-sec .txt-sec, .achie-sec .txt-sec {
+    margin-top: 1rem;
+  }
+  
+  .support-sec .txt1, .achie-sec .txt1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    .support-sec .main-sec, .achie-sec .main-sec {
+      flex-direction: column;
+    }
+  
+    .support-sec .box, .achie-sec .box {
+      width: calc(100% - 2rem);
+    }
+  }
+  
