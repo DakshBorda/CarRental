@@ -65,7 +65,7 @@ const CarList = () => {
 
   return (
     <div className="car-list">
-      <h1>Find Your Perfect Car</h1>
+      <h1>Find Your Perfect Car  drive now</h1>
       <div>
         <SearchBar />
       </div>
