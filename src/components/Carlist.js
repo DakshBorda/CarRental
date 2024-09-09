@@ -48,6 +48,7 @@ import axios from 'axios';
 // import './CarList.css'; // Assuming this is where the CSS is stored
 import SearchBar from './searchbar';
 import { Link } from 'react-router-dom';
+import'./CarList.css';
 
 const CarList = () => {
   const [cars, setCars] = useState([]);

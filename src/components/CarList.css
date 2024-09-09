@@ -1,13 +1,56 @@
-/* CarList.css */
-
-.car-list {
-  width: 80%;
-  margin: 0 auto;
+ .car-list {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+.car-list h1 {
   text-align: center;
+  margin-bottom: 40px;
+} 
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
   margin-bottom: 20px;
+} 
+
+.search-bar input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  flex: 1;
+} 
+
+.search-bar button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filters button:hover {
+  background-color: #e0e0e0;
 }
 
 .available-cars {
@@ -17,44 +60,50 @@ h1 {
 }
 
 .car-item {
-  display: flex; /* Align children side-by-side */
-  align-items: center; /* Align items vertically */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  justify-content: space-between; /* Ensure content is spread out */
+  border-radius: 10px;
+  background-color: #fff;
+  transition: box-shadow 0.3s;
 }
 
-.car-image {
-  max-width: 150px;
+.car-item:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.car-item img {
+  width: 150px;
   height: auto;
-  border-radius: 5px;
-  margin-right: 20px; /* Adds space between image and details */
+  border-radius: 10px;
 }
 
 .car-item-details {
-  flex-grow: 1; /* Allows details to take available space */
+  flex: 1;
 }
 
 .car-item-details h2 {
+  font-size: 20px;
   margin: 0;
-  font-size: 1.5em;
 }
 
 .car-item-details p {
-  margin: 5px 0;
+  font-size: 16px;
+  color: #666;
 }
 
 .view-details {
+  padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
+  border: none;
   border-radius: 5px;
-  margin-left: auto; /* Aligns the button to the far right */
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .view-details:hover {
   background-color: #0056b3;
-}
+}  
