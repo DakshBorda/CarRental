@@ -1,20 +1,55 @@
-import React from 'react';
-import './Home.css';
+// Home.jsx
+import React from "react";
+import "./Home.css"; // Import the CSS file for styling
+import "./Carlist";
+import AboutUs from './AboutUs';
 
-function App() {
+const Home = () => {
   return (
-    <div className="homepage">
-      <div className="overlay">
-        <div className="content">
-          <h1>Find the Perfect Ride with DriveNow</h1>
-          <div className="search-box">
-            <input type="text" placeholder="Search for a car" />
-            <button>Search</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+  <div>
+        <div className="home">
+        <div className="main-sec">
+          <div className="left">
+            <p className="txt1">
+              Find the Perfect Car With DriveNow
+            </p>
 
-export default App;
+            <div className="btn">
+              <button>
+                <a href="/Carlist">Rent car</a>
+              </button>
+            </div>
+          </div>
+
+          <div className="right">
+            <img src="\images\bmw-22428 copy.png" alt="Car" />
+          </div>
+          <AboutUs />
+          </div><br/>
+          <div className="start-sec">
+           <div className="main-sec1">
+            <div className="left1">
+            <h1 class="txt4">Ready To Get Start?</h1>
+              Let's start your journey! Contact us today for personalized assistance and support.
+             <div className="btn1">
+              <button>
+                <a style={{ textDecoration: "none" }} href="/Carlist">Contact Us</a>
+              </button>
+             </div>
+            </div>
+          <div className="right1">
+            <img src="images\verna.png" alt="Car" />
+          </div>
+          </div>
+          </div>
+
+        </div>
+    
+  </div>
+      
+ 
+
+  );
+};
+
+export default Home;

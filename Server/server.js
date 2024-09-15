@@ -131,14 +131,14 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({
-    mongoUrl: 'mongodb://localhost:27017/Drive',
+    mongoUrl: 'mongodb+srv://22cs011:5445@cluster0.tjkub.mongodb.net/<yourDatabase>?authSource=admin&authMechanism=SCRAM-SHA-1',
     ttl: 10 * 60 // 10 minutes
   }),
   cookie: { maxAge: 600000 } // 10 minutes
 }));
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/Drive', {
+mongoose.connect('mongodb+srv://22cs011:5445@cluster0.tjkub.mongodb.net/<yourDatabase>?authSource=admin&authMechanism=SCRAM-SHA-1', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {

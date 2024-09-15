@@ -1,57 +1,139 @@
-src/Home.css
+Home.css
 .home {
-    text-align: center;
-  }
-  
- 
-.main {
-  padding: 20px;
+
+  background-color: whitesmoke;
+  height: 600px;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
 }
 
-.hero {
-  text-align: center;
-  margin-bottom: 40px;
+
+.home .main-sec {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 50px;
+  /* background-color: red; */
+  justify-content: center;
+  align-items: center;
 }
 
-.hero-image {
-  width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: cover;
-}
 
-.hero-text {
-  font-size: 36px;
-  margin: 20px 0;
-}
-
-.search-bar {
+.home .right {
+  width: 400px;
+  height: 300px;
+  margin: 78px;
+  padding: 30px;
+  border-bottom-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(155deg, #a7ceff, #bfc9cb);
 }
 
-.search-bar input {
-  width: 50%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px 0 0 5px;
-  outline: none;
+
+.home .left {
+  padding: 30px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  row-gap: 20px;
+  flex-direction: column;
+  width: 552px;
+  /* background-color: green; */
 }
 
-.search-bar button {
-  padding: 10px 20px;
+.home .left .btn button {
+  padding: 10px 30px;
+  width: 30%;
   border: none;
-  background-color: #007bff;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
   cursor: pointer;
+  border-radius: 10px;
+  background-color: #0043ff8c;
+
 }
+
+.home .main-sec .left .txt1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.home .right img {
+  width: 50vw;
+  filter: drop-shadow(20px 50px 25px #b3e3e3);
+}
+.start-sec {
+  height: 390px;
+  padding: 30px;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  background-color: white;
+}
+
+.start-sec .main-sec1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(45deg, #17c5be, #1c243a);
+  border-radius: 10px;
+  padding: 30px;
+  height: 300px;
+  column-gap: 300px;
+}
+.start-sec .main-sec1 .left1 {
+  /* background: greenyellow; */
+  padding: 10px;
+  height: 300px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 20px;
   
-  .car-listings {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 20px 0;
-  }
-  
+}
+.start-sec .main-sec1 .left1 .btn1 button {
+  padding: 10px 30px;
+  width: 30%;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color:white;
+}
+
+
+.start-sec .main-sec1 .right1 {
+  /* background: rgb(47, 144, 255); */
+  padding: 20px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 20px;
+  width: 300px;
+  align-items: center;
+
+  /* width: 400px;
+  height: 300px;
+  margin: 78px;
+  padding: 30px; */
+  border-bottom-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  /* display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; */
+  background-image: linear-gradient(155deg, #a7ceff, #bfc9cb);
+}
+
+.start-sec .main-sec1 .right1 img {
+  width: 50vw;
+  filter: drop-shadow(20px 50px 25px #b3e3e3);
+}

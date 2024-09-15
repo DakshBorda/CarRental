@@ -3,9 +3,7 @@ import './aboutus.css';
 // import logoImage from './wbimage/logo.jpg';
 
 const AboutUs = ({ user }) => {
-  const openNav = () => {
-    document.getElementById("myNav").style.width = "100%";
-  };
+ 
 
   const closeNav = () => {
     document.getElementById("myNav").style.width = "0%";
