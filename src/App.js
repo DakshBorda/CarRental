@@ -81,7 +81,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom';
 import Home from './components/Home';
-// import AboutUs from './components/AboutUs';
+import AboutUs from './components/AboutUs';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import ContactForm from './components/ContactForm';
@@ -122,6 +122,7 @@ const App = () => {
           <div className="logo">DriveNow</div>
           <nav className="navbar">
             <Link to="/">Home</Link>
+            <Link to="/aboutus">About Us</Link>
             {/* <Link to="/aboutus">About Us</Link> */}
             <Link to="/carlist">Car Listings</Link>
             <Link to="/contact">Contact Us</Link>
@@ -132,7 +133,7 @@ const App = () => {
         <main className="main">
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/aboutus" element={<AboutUs />} /> */}
+            <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/carlist" element={<CarList />} />
             <Route path="/contact" element={<ContactForm />} />
             <Route path="/login" element={<Login setIsAdmin={setIsAdmin} />} />
