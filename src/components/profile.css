@@ -1,3 +1,4 @@
+/*
 .profile-page {
     max-width: 800px;
     margin: 0 auto;
@@ -69,5 +70,32 @@
   .car-item p {
     margin: 5px 0;
     color: #666;
+  }
+  */
+
+  .profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .profile-menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logout-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .logout-button:hover {
+    background-color: #d32f2f;
   }
   

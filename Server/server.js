@@ -106,9 +106,9 @@ const MongoStore = require('connect-mongo');
 const path = require('path');
 
 // Import routes
-const userRoutes = require('./routes/users');
-const carRoutes = require('./routes/carRoutes');
-const bookingRoutes = require('./routes/bookingRoutes');
+const userRoutes = require('./routes/users'); // Ensure this route file exists
+const carRoutes = require('./routes/carRoutes'); // Ensure this route file exists
+const bookingRoutes = require('./routes/bookingRoutes'); // Ensure this route file exists
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -125,14 +125,14 @@ app.use(bodyParser.json());
 
 // Middleware for sessions
 app.use(session({
-  secret: 'xyz',
+  secret: 'xyz', // Change this in production
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({
     mongoUrl: 'mongodb://localhost:27017/Drive',
-    ttl: 10 * 60
+    ttl: 10 * 60 // Session expiration in seconds
   }),
-  cookie: { maxAge: 600000 }
+  cookie: { maxAge: 600000 } // Cookie expiration
 }));
 
 // Connect to MongoDB
@@ -154,17 +154,12 @@ app.get('/', (req, res) => {
   res.send('Server is running...');
 });
 
-// Use user routes
+// Use routes
 app.use('/api/users', userRoutes);
-
-// Use car routes for handling car-related requests
 app.use('/api/admin', carRoutes);
-
-// Use booking routes for handling booking requests
 app.use('/api', bookingRoutes);
 
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
-

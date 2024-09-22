@@ -138,7 +138,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const User = require('../models/User');
-const sendOTP = require('../utils/email');
+const sendOTP = require('../utils/email'); // Ensure this utility is correctly implemented
 
 // Generate OTP
 const generateOTP = () => {
@@ -165,6 +165,7 @@ router.post('/register', async (req, res) => {
 
     res.status(200).json({ msg: 'OTP sent to email' });
   } catch (error) {
+    console.error('Error during registration:', error);
     res.status(500).json({ error: 'Server error' });
   }
 });
@@ -228,14 +229,9 @@ router.post('/login', async (req, res) => {
       return res.status(400).json({ msg: 'Invalid credentials' });
     }
 
-    // Log the user object for debugging
-    console.log('User data:', user); // Check if isAdmin is correctly set
-
     // Create session and set admin flag
     req.session.userId = user._id;
     req.session.isAdmin = user.isAdmin; // Store admin status in session
-
-    console.log('Session Data:', req.session); // Debugging session data
 
     res.status(200).json({ 
       msg: 'Login successful',
@@ -247,6 +243,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// Check if user is admin
 router.get('/check-admin', (req, res) => {
   if (req.session.userId && req.session.isAdmin) {
     res.status(200).json({ isAdmin: true });
@@ -254,11 +251,37 @@ router.get('/check-admin', (req, res) => {
     res.status(403).json({ isAdmin: false });
   }
 });
+
 // Logout
 router.post('/logout', (req, res) => {
-  req.session.destroy();
-  res.status(200).json({ msg: 'Logged out successfully' });
+  req.session.destroy(err => {
+    if (err) {
+      return res.status(500).json({ msg: 'Logout failed' });
+    }
+    res.status(200).json({ msg: 'Logged out successfully' });
+  });
 });
+router.get('/check-login', (req, res) => {
+  if (req.session.userId) {
+    return res.status(200).json({ isLoggedIn: true, isAdmin: req.session.isAdmin || false });
+  } else {
+    return res.status(200).json({ isLoggedIn: false, isAdmin: false });
+  }
+});
+router.get('/profile', async (req, res) => {
+  if (!req.session.userId) {
+    return res.status(401).json({ msg: 'Unauthorized' });
+  }
 
-
+  try {
+    const user = await User.findById(req.session.userId).select('-password'); // Exclude password from response
+    if (!user) {
+      return res.status(404).json({ msg: 'User not found' });
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    console.error('Error fetching user profile:', error);
+    res.status(500).json({ msg: 'Server error' });
+  }
+});
 module.exports = router;

@@ -93,10 +93,32 @@ const deleteCar = async (req, res) => {
   }
 };
 
+const updateCar = async (req, res) => {
+  try {
+    const { carName, fuelType, personCapacity, carType, pickupLocation, price } = req.body;
+    const carPhoto = req.file ? req.file.path.replace(/\\/g, '/') : undefined;
+
+    const updatedCar = await Car.findByIdAndUpdate(
+      req.params.id,
+      { carName, fuelType, personCapacity, carType, pickupLocation, price, ...(carPhoto && { carPhoto }) },
+      { new: true } // Return the updated document
+    );
+
+    if (!updatedCar) {
+      return res.status(404).json({ msg: 'Car not found' });
+    }
+
+    res.status(200).json({ msg: 'Car updated successfully!' });
+  } catch (error) {
+    console.error('Error updating car:', error);
+    res.status(500).json({ msg: 'Failed to update car' });
+  }
+};
+
 module.exports = {
   addCar,
   getCars,
-  getCarById, // Export the getCarById function
+  getCarById,
   deleteCar,
+  updateCar, // Export the updateCar function
 };
-

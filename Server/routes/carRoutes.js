@@ -31,7 +31,9 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
-const { addCar, getCars, getCarById, deleteCar } = require('../controllers/carController');
+
+const { addCar, getCars, getCarById, deleteCar, updateCar } = require('../controllers/carController');
+
 
 // Multer configuration for file uploads
 const storage = multer.diskStorage({
@@ -56,5 +58,24 @@ router.get('/cars/:id', getCarById); // Add this route
 
 // Route to delete a car by ID
 router.delete('/car/:id', deleteCar);
+
+// Route to update a car by ID
+router.put('/cars/:id', upload.single('carPhoto'), updateCar);
+
+router.put('/api/admin/car/:id', async (req, res) => {
+  try {
+    const carId = req.params.id;
+    const updatedCar = await Car.findByIdAndUpdate(carId, req.body, { new: true });
+
+    if (!updatedCar) {
+      return res.status(404).send('Car not found');
+    }
+
+    res.status(200).json(updatedCar);
+  } catch (error) {
+    console.error('Error updating car:', error);
+    res.status(500).send('Server error');
+  }
+});
 
 module.exports = router;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 
-function Login({ setIsAdmin }) { // Receive setIsAdmin as a prop
+function Login({ setIsLoggedIn, setIsAdmin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -19,10 +19,12 @@ function Login({ setIsAdmin }) { // Receive setIsAdmin as a prop
       alert(response.data.msg);
 
       if (response.data.isAdmin) {
-        setIsAdmin(true); // Set admin status
-        navigate('/admin'); // Redirect to the admin panel
+        setIsAdmin(true);
+        setIsLoggedIn(true);
+        navigate('/admin');
       } else {
-        navigate('/'); // Redirect to the homepage if not an admin
+        setIsLoggedIn(true);
+        navigate('/'); // Redirect to the homepage
       }
     } catch (error) {
       console.error('Error logging in:', error);

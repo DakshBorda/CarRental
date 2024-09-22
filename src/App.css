@@ -1,5 +1,5 @@
 /* General Styles */
- body {
+body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -27,7 +27,8 @@
 
 .navbar {
   display: flex;
-  gap: 20px;
+  gap: 20px; /* Space between navbar items */
+  align-items: center; /* Vertically center items */
 }
 
 .navbar a {
@@ -45,8 +46,21 @@
 .navbar .login-icon {
   background-color: #007bff;
   color: #fff;
-  padding:  10px;
+  padding: 10px;
   border-radius: 5px;
+}
+
+.user-controls {
+  display: flex; /* Flex container for user controls */
+  align-items: center; /* Vertically center items */
+}
+
+.profile-icon {
+  display: flex;
+  align-items: center; /* Vertically center the icon */
+  font-size: 24px; /* Icon size */
+  color: #333; /* Icon color */
+  margin-left: 15px; /* Space between profile icon and other links */
 }
 
 .main {
