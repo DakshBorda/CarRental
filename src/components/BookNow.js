@@ -533,19 +533,20 @@ const BookingPage = () => {
           </div>
         </form>
 
-        {/* Read Before You Book Section */}
-        <div className="read-before-you-book">
-          <h3>Read Before You Book</h3>
-          <ul>
-            <li>Ensure all details are accurate before submitting the form.</li>
-            <li>Check the car's availability and make sure the pickup and return dates are correct.</li>
-            <li>Bring necessary documents such as driving license, Aadhar card, and other identification proofs when picking up the car.</li>
-            <li>Contact us if you have any special requests or need further assistance.</li>
-            <li>Review our terms and conditions carefully before accepting.</li>
-          </ul>
-        </div>
+        
       </div>
+      <div className="read-before-you-book">
+      <h3>Read Before You Book</h3>
+      <ul>
+        <li>Ensure all details are accurate before submitting the form.</li>
+        <li>Check the car's availability and make sure the pickup and return dates are correct.</li>
+        <li>Bring necessary documents such as a driving license, Aadhar card, and other identification proofs when picking up the car.</li>
+        <li>Contact us if you have any special requests or need further assistance.</li>
+        <li>Review our terms and conditions carefully before accepting.</li>
+      </ul>
     </div>
+    </div>
+    
   );
 };
 

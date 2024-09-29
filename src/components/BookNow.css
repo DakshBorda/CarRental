@@ -144,8 +144,7 @@ button {
 .read-grid p {
   font-size: 14px;
   margin-bottom: 20px;
-}
-*/
+}*/
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -176,14 +175,17 @@ h1 {
   margin-bottom: 30px;
 }
 
-.content-wrapper {
+.content-wrapper,
+.car-and-form {
   display: flex;
   justify-content: space-between;
   gap: 20px;
   margin-bottom: 30px;
 }
 
-.car-info {
+.car-info,
+.car-details,
+.booking-form {
   width: 48%;
   border: 1px solid #ccc;
   padding: 20px;
@@ -192,14 +194,9 @@ h1 {
 }
 
 .car-image {
-  width: 35%;
+  width: 100%;
   height: auto;
   border-radius: 10px;
-}
-
-.car-details {
-  text-align: left;
-  margin-top: 10px;
 }
 
 .car-details h2 {
@@ -207,14 +204,14 @@ h1 {
   font-size: 28px;
 }
 
-.car-details p {
+.car-details p,
+.car-details ul {
   font-size: 16px;
 }
 
 .car-details ul {
   list-style: none;
   padding: 0;
-  font-size: 16px;
 }
 
 .car-details ul li {
@@ -228,19 +225,17 @@ h1 {
   color: #333;
 }
 
-.booking-form {
-  width: 48%;
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #ffffff;
-}
-
 .booking-form h2 {
   text-align: center;
   margin-bottom: 20px;
   color: #4169e1;
   font-size: 28px;
+}
+#address{
+  width: 95%;
+}
+#message{
+  width: 95%;
 }
 
 .booking-form input,
@@ -254,11 +249,9 @@ h1 {
   background-color: #f1f7ff;
 }
 
-.booking-form input[type="checkbox"] {
-  margin-right: 10px;
-}
-
-.booking-form button {
+.booking-form button,
+.get-otp-button,
+.book-now-button {
   background-color: #4169e1;
   color: white;
   padding: 14px 0;
@@ -267,38 +260,27 @@ h1 {
   font-size: 18px;
   cursor: pointer;
   width: 100%;
+  margin-top: 15px;
 }
 
-.booking-form button:hover {
+.booking-form button:hover,
+.get-otp-button:hover,
+.book-now-button:hover {
   background-color: #315ab8;
 }
 
-.booking-form label {
-  font-size: 14px;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.terms {
-  font-size: 14px;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 30px;
-}
-
+.booking-form label,
 .terms p {
-  margin-bottom: 10px;
-}
-
-.booking-form .error {
-  color: red;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .phone-input {
   display: flex;
   align-items: center;
+  margin-top: -2%;
+}
+#phone{
+  margin-top: 2.8%;
 }
 
 .phone-input .country-code {
@@ -318,44 +300,29 @@ h1 {
   margin-top: 15px;
 }
 
-.otp-section input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
+.read-before-you-book {
+  margin-top: 30px;
+  padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.get-otp-button,
-.book-now-button {
-  background-color: #4169e1;
-  color: white;
-  padding: 14px 0;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  cursor: pointer;
+  border-radius: 10px;
+  background-color: #ffffff;
   width: 100%;
-  margin-top: 15px;
 }
 
-.get-otp-button:hover,
-.book-now-button:hover {
-  background-color: #315ab8;
-}
-
-.booking-form textarea {
-  resize: vertical;
-  height: 80px;
+.read-before-you-book ul {
+  list-style-type: disc;
+  padding-left: 20px;
 }
 
 @media screen and (max-width: 768px) {
-  .content-wrapper {
+  .content-wrapper,
+  .car-and-form {
     flex-direction: column;
     align-items: center;
   }
 
   .car-info,
+  .car-details,
   .booking-form {
     width: 100%;
   }
@@ -365,13 +332,12 @@ h1 {
     align-items: flex-start;
   }
 
-  .phone-input .country-code {
-    border-radius: 5px 5px 0 0;
-    width: 100%;
-  }
-
+  .phone-input .country-code,
   .phone-input input {
-    border-radius: 0 0 5px 5px;
     width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
   }
 }
+
+
