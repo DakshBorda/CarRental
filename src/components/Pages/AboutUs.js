@@ -1,5 +1,5 @@
 import React from 'react';
-import './aboutus.css';
+import '../Styles/aboutus.css';
 // import logoImage from './wbimage/logo.jpg';
 
 const AboutUs = ({ user }) => {

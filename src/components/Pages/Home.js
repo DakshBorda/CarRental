@@ -1,6 +1,6 @@
 // Home.jsx
 import React from "react";
-import "./Home.css"; // Import the CSS file for styling
+import "../Styles/Home.css"; // Import the CSS file for styling
 import "./Carlist";
 import AboutUs from './AboutUs';
 
