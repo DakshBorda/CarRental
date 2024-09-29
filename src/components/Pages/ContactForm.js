@@ -33,7 +33,7 @@ const ContactForm = () => {
       <p>If you have any questions or need assistance related to car rentals, feel free to reach out. we are here to help and it's our pleasure to assist you.</p>
     
       <form onSubmit={handleSubmit}>
-        <div className="input-box">
+        <div className="input-box1">
           <input
             type="text"
             placeholder="Enter your name"
