@@ -33,7 +33,7 @@ const Home = () => {
               Let's start your journey! Contact us today for personalized assistance and support.
              <div className="btn1">
               <button>
-                <a style={{ textDecoration: "none" }} href="/Carlist">Contact Us</a>
+                <a style={{ textDecoration: "none" }} href="/contact">Contact Us</a>
               </button>
              </div>
             </div>

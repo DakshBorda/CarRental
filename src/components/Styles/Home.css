@@ -1,4 +1,4 @@
-Home.css
+
 .home {
 
   background-color: whitesmoke;
@@ -61,6 +61,7 @@ Home.css
 .home .main-sec .left .txt1 {
   font-size: 4rem;
   font-weight: 700;
+  
 }
 
 .home .right img {
@@ -136,4 +137,9 @@ Home.css
 .start-sec .main-sec1 .right1 img {
   width: 50vw;
   filter: drop-shadow(20px 50px 25px #b3e3e3);
+}
+
+.h1{
+  text-align: left;
+
 }
