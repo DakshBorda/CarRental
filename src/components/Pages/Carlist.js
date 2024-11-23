@@ -61,7 +61,7 @@ const CarList = () => {
                 <h2>{car.carName}</h2>
                 <p>{car.fuelType} | {car.personCapacity} Seats | {car.carType}</p>
                 <p>{car.pickupLocation}</p>
-                <p><strong>Price:</strong> {car.price}</p>
+                <p><strong>₹</strong>{car.price}/day</p>
               </div>
               <Link to={`/book-now/${car._id}`} className="view-details">Book Now</Link>
             </div>

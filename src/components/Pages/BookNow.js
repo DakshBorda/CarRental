@@ -379,7 +379,7 @@ const BookingPage = () => {
                   type="checkbox"
                   name="termsAccepted"
                   checked={formData.termsAccepted}
-                  onChange={handleChange}
+                  onChange={handleChange} 
                 />
                 I accept the terms and conditions
               </label>

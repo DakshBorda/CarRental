@@ -16,7 +16,7 @@ const Home = () => {
 
             <div className="btn">
               <button>
-                <a href="/Carlist">Rent car</a>
+                <a style={{ textDecoration: "none",  color:'white'}} href="/Carlist">Rent car</a>
               </button>
             </div>
           </div>

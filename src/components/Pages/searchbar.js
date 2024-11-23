@@ -85,7 +85,7 @@ const SearchBar = ({ onFilterChange }) => {
         </select>
       </div>
 
-      <button type="button" className="search-button">Search</button>
+      {/* <button type="button" className="search-button">Search</button> */}
     </div>
   );
 };
